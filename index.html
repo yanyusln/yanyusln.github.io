@@ -1,21 +1,10 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>烟雨数流年的博客 - blog</title><meta name="keywords" content="烟雨数流年,烟雨,流年,前端博客,博客,烟雨数流年的博客"><meta name="author" content="烟雨数流年"><meta name="copyright" content="烟雨数流年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个前端搬砖工的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="烟雨数流年的博客">
-<meta property="og:url" content="https://yanyusln.github.io/index.html">
-<meta property="og:site_name" content="烟雨数流年的博客">
-<meta property="og:description" content="一个前端搬砖工的博客">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yanyusln.github.io/gallery/avatar.png">
-<meta property="article:author" content="烟雨数流年">
-<meta property="article:tag" content="烟雨数流年,烟雨,流年,前端博客,博客,烟雨数流年的博客">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yanyusln.github.io/gallery/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanyusln.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>烟雨数流年的博客 - blog</title><meta name="author" content="烟雨数流年"><meta name="copyright" content="烟雨数流年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个前端搬砖工的博客"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanyusln.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -26,7 +15,7 @@
     post: false
   },
   runtime: '',
-  date_suffix: {
+  dateSuffix: {
     just: '刚刚',
     min: '分钟前',
     hour: '小时前',
@@ -36,85 +25,96 @@
   copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
   islazyload: false,
-  isAnchor: false
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '烟雨数流年的博客',
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-09-23 10:29:59'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+  postUpdate: '2024-09-23 10:31:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
       }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -122,9 +122,9 @@
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -134,13 +134,13 @@
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/gallery/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/gallery/index.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">烟雨数流年的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">烟雨数流年的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><img class="post_bg" src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue3项目实战之脚手架入门"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门">vue3项目实战之脚手架入门</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:20:44.000Z" title="发表于 2024-09-19 15:20:44">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span></div><div class="content">1. 环境准备与项目初始化1.1 检查 Node.js 环境确保本地开发环境中已安装 Node.js，可以通过在终端执行 node -v 来检查 Node.js 版本。当前 Vite 推荐使用 Node.js 的版本为 14.18.0 或更高版本。
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/gallery/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/gallery/index.png')"><nav id="nav"><span id="blog-info"><a href="/" title="烟雨数流年的博客"><span class="site-name">烟雨数流年的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">烟雨数流年的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><div class="post-bg" style="background: /gallery/covers/vuejs.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门">vue3项目实战之脚手架入门</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:20:44.000Z" title="发表于 2024-09-19 15:20:44">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span></div><div class="content">1. 环境准备与项目初始化1.1 检查 Node.js 环境确保本地开发环境中已安装 Node.js，可以通过在终端执行 node -v 来检查 Node.js 版本。当前 Vite 推荐使用 Node.js 的版本为 14.18.0 或更高版本。
 1.2 使用 Vite 创建 Vue3 项目通过 npm 或 yarn 安装 Vite，并使用以下命令创建一个新的 Vue3 项目：
 1npm create vite@latest my-vue-app --template vue
 
@@ -150,7 +150,7 @@
 接下来，安装 TypeScript 支持：
 1npm install --save-dev typescript @vitejs/plugin-vue @vitejs/plugin-typescript
 
-在项目根目录下创建 tsconfig.json  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析"><img class="post_bg" src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3的概述和入门浅析"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析">Vue3的概述和入门浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:19:53.000Z" title="发表于 2024-09-19 15:19:53">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span></div><div class="content">前言Vue3作为Vue.js的最新版本，自2020年9月正式发布以来，在前端开发领域引起了广泛关注。它不仅在性能上进行了显著提升，还在开发体验和功能上带来了诸多新特性。以下是对Vue3的详细深度解析，包括与Vue2的对比、Vue3的新特性、Vue3的原理以及Vue3的各种知识点整理。
+在项目根目录下创建 tsconfig.json  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析"><div class="post-bg" style="background: /gallery/covers/vuejs.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析">Vue3的概述和入门浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:19:53.000Z" title="发表于 2024-09-19 15:19:53">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span></div><div class="content">前言Vue3作为Vue.js的最新版本，自2020年9月正式发布以来，在前端开发领域引起了广泛关注。它不仅在性能上进行了显著提升，还在开发体验和功能上带来了诸多新特性。以下是对Vue3的详细深度解析，包括与Vue2的对比、Vue3的新特性、Vue3的原理以及Vue3的各种知识点整理。
 
 一、Vue 3 vs Vue 2：主要区别1. 响应式系统
 Vue2：使用Object.defineProperty来实现响应式系统，这种方式对数组和新增属性的观测不够友好，需要额外的代码来实现。
@@ -161,7 +161,7 @@ Vue2：组件的逻辑（如数据、方法）主要通过data、methods等选�
 Vue3：引入了setup函数作为组件逻辑的入口点，并引入了Composition API（组合式API），允许以函数的方式组织组件逻辑，提高了代码的可复用性和可维护性。
 
 3. 性能优化
-Vue3：通过改进虚拟DOM算法 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析"><img class="post_bg" src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript数据类型解析"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析">TypeScript数据类型解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:18:53.000Z" title="发表于 2024-09-19 15:18:53">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript 是一种静态类型的超集语言，扩展了 JavaScript 的功能。它提供了丰富的数据类型，包括基本数据类型和复杂数据类型。下面是对这些类型的详细解析和一些经典例子。
+Vue3：通过改进虚拟DOM算法 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析"><div class="post-bg" style="background: /gallery/covers/ts.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析">TypeScript数据类型解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:18:53.000Z" title="发表于 2024-09-19 15:18:53">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript 是一种静态类型的超集语言，扩展了 JavaScript 的功能。它提供了丰富的数据类型，包括基本数据类型和复杂数据类型。下面是对这些类型的详细解析和一些经典例子。
 
 基本数据类型
 布尔类型（Boolean）
@@ -184,7 +184,7 @@ Vue3：通过改进虚拟DOM算法 ...</div></div></div><div class="recent-post-
 空值（Null 和 Undefined）
 
    - null表示没有任何对象值。
-   - undefined表示一个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析"><img class="post_bg" src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript概述-TypeScript入门浅析"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析">TypeScript概述-TypeScript入门浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:18:01.000Z" title="发表于 2024-09-19 15:18:01">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript（简称TS）是由微软开发的一款开源的编程语言，它是JavaScript的一个超集，为JavaScript添加了类型系统和一些其他特性。以下是TypeScript的详细解析：
+   - undefined表示一个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析"><div class="post-bg" style="background: /gallery/covers/ts.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析">TypeScript概述-TypeScript入门浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:18:01.000Z" title="发表于 2024-09-19 15:18:01">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript（简称TS）是由微软开发的一款开源的编程语言，它是JavaScript的一个超集，为JavaScript添加了类型系统和一些其他特性。以下是TypeScript的详细解析：
 
 一、TypeScript是什么？1.定义TypeScript扩展了JavaScript的语法，并添加了类型系统。它可以在任何支持JavaScript的平台中执行，但需要先编译为JavaScript。  
 2.特点
@@ -193,7 +193,7 @@ Vue3：通过改进虚拟DOM算法 ...</div></div></div><div class="recent-post-
 丰富的类型系统：包括基本类型（如number、string、boolean等）、数组、元组、枚举、接口、类型别名等。  
 支持ES新特性：TypeScript遵循最新的ECMAScript规范，并添加了一些ES不具备的新特性。
 
-二、TypeScript的安装与编译1. 安装：可以通过npm（Node.js的包管理器）安装TypeScript，命令为npm inst ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析"><img class="post_bg" src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript装饰器浅析"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析">TypeScript装饰器浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:16:10.000Z" title="发表于 2024-09-19 15:16:10">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript中的装饰器（Decorator）是一种特殊类型的声明，可以附加到类声明、方法、访问器、属性或参数上，以实现对类及其成员的扩展或修改。装饰器在TypeScript中提供了一种元编程的方式，允许开发者在不修改原有类代码的情况下，动态地添加功能或修改行为。以下是TypeScript装饰器的详细解析：
+二、TypeScript的安装与编译1. 安装：可以通过npm（Node.js的包管理器）安装TypeScript，命令为npm inst ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析"><div class="post-bg" style="background: /gallery/covers/ts.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析">TypeScript装饰器浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T07:16:10.000Z" title="发表于 2024-09-19 15:16:10">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">前言TypeScript中的装饰器（Decorator）是一种特殊类型的声明，可以附加到类声明、方法、访问器、属性或参数上，以实现对类及其成员的扩展或修改。装饰器在TypeScript中提供了一种元编程的方式，允许开发者在不修改原有类代码的情况下，动态地添加功能或修改行为。以下是TypeScript装饰器的详细解析：
 一、装饰器的类型TypeScript装饰器主要可以分为以下几类：
 
 类装饰器：应用于类构造函数，可以用来修改类的行为或元数据。类装饰器接收一个参数，即类的构造函数。
@@ -202,7 +202,7 @@ Vue3：通过改进虚拟DOM算法 ...</div></div></div><div class="recent-post-
 参数装饰器：应用于函数（包括类方法）的参数，可以用来修改函数参数的行为或元数据。参数装饰器接收三个参数：目标对象、方法名和参数索引。
 访问器装饰器：应用于类的访问器（get和set方法），用于修改访问器的行为。访问器装饰器的使用方式与方法装饰器类似。
 
-二、装饰器的使用要使用TypeScrip ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7%E8%AF%A6%E8%A7%A3/" title="ES6新特性详解"><img class="post_bg" src="/gallery/covers/JavaScript.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6新特性详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7%E8%AF%A6%E8%A7%A3/" title="ES6新特性详解">ES6新特性详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T03:35:43.000Z" title="发表于 2024-09-19 11:35:43">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/js/">js</a></span></div><div class="content">1. ES6简介与重要新特性概述1.1 ECMAScript 6 标准概览ECMAScript 6，亦称为ES2015，是JavaScript语言的一次重大更新，由ECMA国际组织于2015年正式发布。这一标准的发布旨在让JavaScript语言更加现代化，提供更多的特性以及改进语法，从而满足开发者在构建复杂应用时的需求。
+二、装饰器的使用要使用TypeScrip ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7%E8%AF%A6%E8%A7%A3/" title="ES6新特性详解"><div class="post-bg" style="background: /gallery/covers/JavaScript.webp"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7%E8%AF%A6%E8%A7%A3/" title="ES6新特性详解">ES6新特性详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-19T03:35:43.000Z" title="发表于 2024-09-19 11:35:43">2024-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/js/">js</a></span></div><div class="content">1. ES6简介与重要新特性概述1.1 ECMAScript 6 标准概览ECMAScript 6，亦称为ES2015，是JavaScript语言的一次重大更新，由ECMA国际组织于2015年正式发布。这一标准的发布旨在让JavaScript语言更加现代化，提供更多的特性以及改进语法，从而满足开发者在构建复杂应用时的需求。
 1.2 语言与特性的改进点ES6引入了一系列新特性，极大地丰富了JavaScript的编程范式，并提升了代码的可读性与可维护性。以下是一些重要的改进点：
 
 let和const关键字：引入了块级作用域的变量声明方式，let用于可重新赋值的变量，而const用于声明常量，避免了变量提升的问题。
@@ -210,12 +210,12 @@ let和const关键字：引入了块级作用域的变量声明方式，let用于
 箭头函数：提供了更简洁的函数书写方式，并且没有自己的this上下文，通常用于回调函数。
 解构赋值：允许从数组或对象中快速提取值并分配给变量，简化了数据的交换和属性的提取。
 默认参数值：允许在函数定义时为参数提供默认值，使得函数调用更为灵活。
-扩展运算符（Spread ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/11/%E9%A5%BF%E4%BA%86%E4%B9%88%E9%80%89%E6%8B%A9%E5%99%A8%E7%BB%84%E4%BB%B6el-select%E6%80%8E%E4%B9%88%E5%9C%A8change%E4%BA%8B%E4%BB%B6%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6%E7%9A%84/" title="饿了么选择器组件el-select怎么在change事件中获取组件的label值"><img class="post_bg" src="/gallery/covers/elet.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="饿了么选择器组件el-select怎么在change事件中获取组件的label值"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/11/%E9%A5%BF%E4%BA%86%E4%B9%88%E9%80%89%E6%8B%A9%E5%99%A8%E7%BB%84%E4%BB%B6el-select%E6%80%8E%E4%B9%88%E5%9C%A8change%E4%BA%8B%E4%BB%B6%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6%E7%9A%84/" title="饿了么选择器组件el-select怎么在change事件中获取组件的label值">饿了么选择器组件el-select怎么在change事件中获取组件的label值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-11T02:59:27.000Z" title="发表于 2023-04-11 10:59:27">2023-04-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/element-ui/">element-ui</a></span></div><div class="content">
+扩展运算符（Spread ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/11/%E9%A5%BF%E4%BA%86%E4%B9%88%E9%80%89%E6%8B%A9%E5%99%A8%E7%BB%84%E4%BB%B6el-select%E6%80%8E%E4%B9%88%E5%9C%A8change%E4%BA%8B%E4%BB%B6%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6%E7%9A%84/" title="饿了么选择器组件el-select怎么在change事件中获取组件的label值"><div class="post-bg" style="background: /gallery/covers/elet.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/11/%E9%A5%BF%E4%BA%86%E4%B9%88%E9%80%89%E6%8B%A9%E5%99%A8%E7%BB%84%E4%BB%B6el-select%E6%80%8E%E4%B9%88%E5%9C%A8change%E4%BA%8B%E4%BB%B6%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6%E7%9A%84/" title="饿了么选择器组件el-select怎么在change事件中获取组件的label值">饿了么选择器组件el-select怎么在change事件中获取组件的label值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-11T02:59:27.000Z" title="发表于 2023-04-11 10:59:27">2023-04-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/element-ui/">element-ui</a></span></div><div class="content">
 在element-ui的el-select组件中，可以通过$refs来获取到组件实例，然后通过实例的属性来获取选中的label值。
 示例代码：
 
 
-123456789101112131415161718192021222324252627&lt;template&gt;  &lt;el-select v-model=&quot;selectedValue&quot; ref=&quot;mySelect&quot; @change=&quot;handleChange&quot;&gt;    &lt;el-option v-for=&quot;item in options&quot; :key=&quot;item.value&quot; :label=&quot;item.label&quot; :value=&quot;item.value&quot;&gt;&lt;/el-option&gt;  &lt;/el-select&gt;&lt;/template&gt;&lt;script&gt;export default &#123;  data() &#123;    r ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/27/%E6%80%8E%E4%B9%88%E7%94%A8js%E5%88%A4%E6%96%ADdom%E5%AD%98%E4%B8%8D%E5%AD%98%E6%9F%90class/" title="怎么用js判断dom存不存某class"><img class="post_bg" src="/gallery/covers/JavaScript.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么用js判断dom存不存某class"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/27/%E6%80%8E%E4%B9%88%E7%94%A8js%E5%88%A4%E6%96%ADdom%E5%AD%98%E4%B8%8D%E5%AD%98%E6%9F%90class/" title="怎么用js判断dom存不存某class">怎么用js判断dom存不存某class</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-27T03:03:49.000Z" title="发表于 2023-03-27 11:03:49">2023-03-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/js/">js</a></span></div><div class="content">
+123456789101112131415161718192021222324252627&lt;template&gt;  &lt;el-select v-model=&quot;selectedValue&quot; ref=&quot;mySelect&quot; @change=&quot;handleChange&quot;&gt;    &lt;el-option v-for=&quot;item in options&quot; :key=&quot;item.value&quot; :label=&quot;item.label&quot; :value=&quot;item.value&quot;&gt;&lt;/el-option&gt;  &lt;/el-select&gt;&lt;/template&gt;&lt;script&gt;export default &#123;  data() &#123;    r ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/27/%E6%80%8E%E4%B9%88%E7%94%A8js%E5%88%A4%E6%96%ADdom%E5%AD%98%E4%B8%8D%E5%AD%98%E6%9F%90class/" title="怎么用js判断dom存不存某class"><div class="post-bg" style="background: /gallery/covers/JavaScript.webp"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/27/%E6%80%8E%E4%B9%88%E7%94%A8js%E5%88%A4%E6%96%ADdom%E5%AD%98%E4%B8%8D%E5%AD%98%E6%9F%90class/" title="怎么用js判断dom存不存某class">怎么用js判断dom存不存某class</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-27T03:03:49.000Z" title="发表于 2023-03-27 11:03:49">2023-03-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/js/">js</a></span></div><div class="content">
 怎么用js判断 dom存不存某class
 
 可以使用JavaScript的classList属性来判断DOM元素是否包含某个class。classList属性返回一个DOMTokenList对象，它包含了元素的所有class，可以使用它的contains()方法来判断元素是否包含某个class。具体步骤如下：
@@ -234,18 +234,18 @@ let和const关键字：引入了块级作用域的变量声明方式，let用于
 
   12345if (classList.contains(&#x27;my-class&#x27;)) &#123; // 元素包含my-class&#125; else &#123; // 元素不包含my-class&#125;
 
-需要注意的是，classList属性在IE9及以下版本的浏览器中 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/22/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口"><img class="post_bg" src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ts_接口"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/22/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-22T02:44:31.000Z" title="发表于 2022-08-22 10:44:31">2022-08-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">接口是一种能力，一种约束
+需要注意的是，classList属性在IE9及以下版本的浏览器中 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/22/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口"><div class="post-bg" style="background: /gallery/covers/ts.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/22/ts-%E6%8E%A5%E5%8F%A3/" title="ts_接口">ts_接口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-22T02:44:31.000Z" title="发表于 2022-08-22 10:44:31">2022-08-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">接口是一种能力，一种约束
 123456789101112131415(()=&gt;&#123;    interface IPerson&#123;        firstName:string,        lastName:string    &#125;,    function showFullName(person:IPerson) &#123;        return person.firstName+&#x27;_&#x27;+person.lastName    &#125;    const person = &#123;        firstName:&#x27;东方&#x27;,        lastName:&#x27;不败&#x27;,    &#125;    console.log(showFullName(person))    // 东方_不败&#125;)()
 
-TypeScript 的核心原则之一是对值所具有的结构进行类型检查。我们使用接口（Interfaces）来定义对象的类型。接口是对象的状态(属性)和行为(方法)的抽象(描述) ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/22/ts-%E6%B3%9B%E5%9E%8B/" title="ts_泛型"><img class="post_bg" src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ts_泛型"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/22/ts-%E6%B3%9B%E5%9E%8B/" title="ts_泛型">ts_泛型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-22T02:43:34.000Z" title="发表于 2022-08-22 10:43:34">2022-08-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">泛型指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。
+TypeScript 的核心原则之一是对值所具有的结构进行类型检查。我们使用接口（Interfaces）来定义对象的类型。接口是对象的状态(属性)和行为(方法)的抽象(描述) ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/22/ts-%E6%B3%9B%E5%9E%8B/" title="ts_泛型"><div class="post-bg" style="background: /gallery/covers/ts.jpg"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/22/ts-%E6%B3%9B%E5%9E%8B/" title="ts_泛型">ts_泛型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-22T02:43:34.000Z" title="发表于 2022-08-22 10:43:34">2022-08-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ts/">ts</a></span></div><div class="content">泛型指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。
 引入下面创建一个函数, 实现功能: 根据指定的数量 count 和数据 value , 创建一个包含 count 个 value 的数组 不用泛型的话，这个函数可能是下面这样：  
 1234567891011function createArray(value: any, count: number): any[] &#123;  const arr: any[] = []  for (let index = 0; index &lt; count; index++) &#123;    arr.push(value)  &#125;  return arr&#125;const arr1 = createArray(11, 3)const arr2 = createArray(&#x27;aa&#x27;, 3)console.log(arr1[0].toFixed(), arr2[0].split(&#x27;&#x27;))
 
-使用函数泛型12345678910111213funct ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/gallery/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">烟雨数流年</div><div class="author-info__description">一个前端搬砖工的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yanyusln"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><img src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue3项目实战之脚手架入门"/></a><div class="content"><a class="title" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门">vue3项目实战之脚手架入门</a><time datetime="2024-09-19T07:20:44.000Z" title="发表于 2024-09-19 15:20:44">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析"><img src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3的概述和入门浅析"/></a><div class="content"><a class="title" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析">Vue3的概述和入门浅析</a><time datetime="2024-09-19T07:19:53.000Z" title="发表于 2024-09-19 15:19:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript数据类型解析"/></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析">TypeScript数据类型解析</a><time datetime="2024-09-19T07:18:53.000Z" title="发表于 2024-09-19 15:18:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript概述-TypeScript入门浅析"/></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析">TypeScript概述-TypeScript入门浅析</a><time datetime="2024-09-19T07:18:01.000Z" title="发表于 2024-09-19 15:18:01">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript装饰器浅析"/></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析">TypeScript装饰器浅析</a><time datetime="2024-09-19T07:16:10.000Z" title="发表于 2024-09-19 15:16:10">2024-09-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+使用函数泛型12345678910111213funct ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/gallery/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">烟雨数流年</div><div class="author-info__description">一个前端搬砖工的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yanyusln"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><div style="background: /gallery/covers/vuejs.jpg"></div></a><div class="content"><a class="title" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门">vue3项目实战之脚手架入门</a><time datetime="2024-09-19T07:20:44.000Z" title="发表于 2024-09-19 15:20:44">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析"><div style="background: /gallery/covers/vuejs.jpg"></div></a><div class="content"><a class="title" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析">Vue3的概述和入门浅析</a><time datetime="2024-09-19T07:19:53.000Z" title="发表于 2024-09-19 15:19:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析"><div style="background: /gallery/covers/ts.jpg"></div></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析">TypeScript数据类型解析</a><time datetime="2024-09-19T07:18:53.000Z" title="发表于 2024-09-19 15:18:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析"><div style="background: /gallery/covers/ts.jpg"></div></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析">TypeScript概述-TypeScript入门浅析</a><time datetime="2024-09-19T07:18:01.000Z" title="发表于 2024-09-19 15:18:01">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析"><div style="background: /gallery/covers/ts.jpg"></div></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E8%A3%85%E9%A5%B0%E5%99%A8%E6%B5%85%E6%9E%90/" title="TypeScript装饰器浅析">TypeScript装饰器浅析</a><time datetime="2024-09-19T07:16:10.000Z" title="发表于 2024-09-19 15:16:10">2024-09-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/element-ui/"><span class="card-category-list-name">element-ui</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/js/"><span class="card-category-list-name">js</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ts/"><span class="card-category-list-name">ts</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/vue/"><span class="card-category-list-name">vue</span><span class="card-category-list-count">3</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/Proxy/" style="font-size: 1.1em; color: #999">Proxy</a> <a href="/tags/Reflect/" style="font-size: 1.1em; color: #999">Reflect</a> <a href="/tags/el-select/" style="font-size: 1.1em; color: #999">el-select</a> <a href="/tags/js/" style="font-size: 1.1em; color: #999">js</a> <a href="/tags/ts/" style="font-size: 1.1em; color: #999">ts</a> <a href="/tags/ts%E7%9A%84%E6%8E%A5%E5%8F%A3/" style="font-size: 1.1em; color: #999">ts的接口</a> <a href="/tags/ts%E7%9A%84%E6%B3%9B%E5%9E%8B/" style="font-size: 1.1em; color: #999">ts的泛型</a> <a href="/tags/ts%E7%9A%84%E7%B1%BB/" style="font-size: 1.1em; color: #999">ts的类</a> <a href="/tags/ts%E7%9A%84%E7%B1%BB%E5%9E%8B/" style="font-size: 1.5em; color: #99a9bf">ts的类型</a> <a href="/tags/ts%E8%A3%85%E9%A5%B0%E5%99%A8/" style="font-size: 1.1em; color: #999">ts装饰器</a> <a href="/tags/vue3/" style="font-size: 1.5em; color: #99a9bf">vue3</a> <a href="/tags/vue3%E8%84%9A%E6%89%8B%E6%9E%B6/" style="font-size: 1.1em; color: #999">vue3脚手架</a> <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" style="font-size: 1.1em; color: #999">响应式原理</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-09-23T02:29:59.188Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 烟雨数流年</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Proxy/" style="font-size: 1.1em; color: #999">Proxy</a> <a href="/tags/js/" style="font-size: 1.1em; color: #999">js</a> <a href="/tags/ts%E7%9A%84%E6%8E%A5%E5%8F%A3/" style="font-size: 1.1em; color: #999">ts的接口</a> <a href="/tags/vue3/" style="font-size: 1.5em; color: #99a9bf">vue3</a> <a href="/tags/ts%E7%9A%84%E6%B3%9B%E5%9E%8B/" style="font-size: 1.1em; color: #999">ts的泛型</a> <a href="/tags/el-select/" style="font-size: 1.1em; color: #999">el-select</a> <a href="/tags/ts%E7%9A%84%E7%B1%BB/" style="font-size: 1.1em; color: #999">ts的类</a> <a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/vue3%E8%84%9A%E6%89%8B%E6%9E%B6/" style="font-size: 1.1em; color: #999">vue3脚手架</a> <a href="/tags/Reflect/" style="font-size: 1.1em; color: #999">Reflect</a> <a href="/tags/ts%E7%9A%84%E7%B1%BB%E5%9E%8B/" style="font-size: 1.5em; color: #99a9bf">ts的类型</a> <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" style="font-size: 1.1em; color: #999">响应式原理</a> <a href="/tags/ts%E8%A3%85%E9%A5%B0%E5%99%A8/" style="font-size: 1.1em; color: #999">ts装饰器</a> <a href="/tags/ts/" style="font-size: 1.1em; color: #999">ts</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-09-23T02:31:43.895Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 烟雨数流年</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
