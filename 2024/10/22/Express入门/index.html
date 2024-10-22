@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><meta name="msvalidate.01" content="1A4E0B06FA2C723C7A6AF5252581B84E"><title>Express入门 | 烟雨数流年的博客</title><meta name="author" content="烟雨数流年"><meta name="copyright" content="烟雨数流年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Express.js 是由 TJ Holowaychuk 开发的，现在由 Node.js 基金会和众多开源贡献者维护。它是一个保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。  一、安装与基本使用 安装Node.js：   首先，需要在计"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanyusln.github.io/2024/10/22/Express%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><meta name="msvalidate.01" content="1A4E0B06FA2C723C7A6AF5252581B84E"><title>Express入门 | 烟雨数流年的博客</title><meta name="author" content="烟雨数流年"><meta name="copyright" content="烟雨数流年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Express.js 是由 TJ Holowaychuk 开发的，现在由 Node.js 基金会和众多开源贡献者维护。它是一个保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。  一、安装与基本使用 安装Node.js：  首先，需要在计算"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanyusln.github.io/2024/10/22/Express%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
@@ -43,7 +43,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-10-22 10:14:55'
+  postUpdate: '2024-10-22 10:18:32'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -140,18 +140,16 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/gallery/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/gallery/covers/ts.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="烟雨数流年的博客"><span class="site-name">烟雨数流年的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Express入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-22T02:08:00.000Z" title="发表于 2024-10-22 10:08:00">2024-10-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T02:14:55.686Z" title="更新于 2024-10-22 10:14:55">2024-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/nodejs/">nodejs</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Express入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/gallery/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/gallery/covers/ts.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="烟雨数流年的博客"><span class="site-name">烟雨数流年的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Express入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-22T02:08:00.000Z" title="发表于 2024-10-22 10:08:00">2024-10-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T02:18:32.618Z" title="更新于 2024-10-22 10:18:32">2024-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/nodejs/">nodejs</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Express入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
 <p>Express.js 是由 TJ Holowaychuk 开发的，现在由 Node.js 基金会和众多开源贡献者维护。它是一个保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。</p>
 </blockquote>
 <h3 id="一、安装与基本使用"><a href="#一、安装与基本使用" class="headerlink" title="一、安装与基本使用"></a>一、安装与基本使用</h3><ol>
-<li><strong>安装Node.js</strong>：</li>
-</ol>
+<li><p><strong>安装Node.js</strong>：</p>
 <ul>
 <li>首先，需要在计算机上安装Node.js。Node.js是一个基于Chrome V8引擎的JavaScript运行环境，它允许JavaScript代码在服务器端运行。</li>
 </ul>
-<ol start="2">
-<li><strong>安装Express</strong>：</li>
-</ol>
+</li>
+<li><p><strong>安装Express</strong>：</p>
 <ul>
 <li><p>使用npm（Node.js的包管理器）来安装Express。在项目目录下，打开命令行工具，执行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
@@ -159,19 +157,17 @@
 <li><p>这将下载并安装Express及其依赖项。</p>
 </li>
 </ul>
-<ol start="3">
-<li><strong>创建简单的Express服务器</strong>：</li>
-</ol>
+</li>
+<li><p><strong>创建简单的Express服务器</strong>：</p>
 <ul>
 <li><p>创建一个JavaScript文件（例如<code>app.js</code>），并在其中编写以下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();  </span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;   </span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;    </span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>);  </span><br><span class="line">&#125;);   </span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>`</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>); </span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">   res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line">&#125;);  </span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>这段代码创建了一个Express应用程序，定义了一个简单的路由，当访问根路径时返回“Hello World!”。</p>
 </li>
 </ul>
-<ol start="4">
-<li><strong>启动服务器</strong>：</li>
-</ol>
+</li>
+<li><p><strong>启动服务器</strong>：</p>
 <ul>
 <li><p>在命令行中，进入项目目录，并执行以下命令来启动应用程序：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
@@ -179,16 +175,14 @@
 <li><p>将看到控制台输出的服务器运行消息，并且可以在浏览器中访问<code>http://localhost:3000</code>，看到“Hello World!”的消息显示在页面上。</p>
 </li>
 </ul>
+</li>
+</ol>
 <h3 id="二、核心概念"><a href="#二、核心概念" class="headerlink" title="二、核心概念"></a>二、核心概念</h3><ol>
-<li><strong>路由</strong>：</li>
-</ol>
-<ul>
-<li>路由是指定义应用程序端点的路径以及处理这些路径上请求的方式。在Express中，可以使用<code>app.METHOD(PATH, HANDLER)</code>语法来定义路由，其中<code>METHOD</code>是HTTP请求方法（如GET、POST等），<code>PATH</code>是请求的路径，<code>HANDLER</code>是处理请求的函数。</li>
+<li><strong>路由</strong>：<ul>
+<li>路由是指定义应用程序端点的路径以及处理这些路径上请求的方式。在Express中，可以使用<code>app.METHOD(PATH, HANDLER)</code>语法来定义路由，其中<code>METHOD</code>是HTTP请求方法（如GET、POST等），<code>PATH</code>是请求的路径，<code>HANDLER</code>是处理请求的函数。 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/about&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;About page&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="2">
-<li><strong>中间件</strong>：</li>
-</ol>
-<ul>
+</li>
+<li><strong>中间件</strong>：<ul>
 <li>中间件是一种函数，可以访问请求对象（req）、响应对象（res）和应用程序请求-响应周期中的下一个中间件函数。每个中间件函数都有权访问请求对象（req）、响应对象（res），以及管道中下一个中间件函数的引用（next）。中间件常用于执行以下任务：<ul>
 <li>执行任何代码。</li>
 <li>修改请求和响应对象。</li>
@@ -196,41 +190,39 @@
 <li>调用堆栈中的下一个中间件函数。</li>
 </ul>
 </li>
-<li>如果当前中间件没有结束请求-响应循环，则必须调用<code>next()</code>函数以将控制权传递给下一个中间件函数。否则，请求将保持挂起状态。</li>
+<li>如果当前中间件没有结束请求-响应循环，则必须调用<code>next()</code>函数以将控制权传递给下一个中间件函数。否则，请求将保持挂起状态。 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Time: &#x27;</span>, <span class="title class_">Date</span>.<span class="title function_">now</span>());</span><br><span class="line">  <span class="title function_">next</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="3">
-<li><strong>请求和响应对象</strong>：</li>
-</ol>
-<ul>
+</li>
+<li><strong>请求和响应对象</strong>：<ul>
 <li><code>req</code>（请求对象）包含了与HTTP请求相关的所有信息，如请求头、请求参数等。</li>
 <li><code>res</code>（响应对象）用于发送HTTP响应到客户端，如设置状态码、发送数据等。</li>
 </ul>
-<h3 id="三、进一步学习"><a href="#三、进一步学习" class="headerlink" title="三、进一步学习"></a>三、进一步学习</h3><ol>
-<li><strong>处理静态文件</strong>：</li>
+</li>
 </ol>
+<h3 id="三、进一步学习"><a href="#三、进一步学习" class="headerlink" title="三、进一步学习"></a>三、进一步学习</h3><ol>
+<li><p><strong>处理静态文件</strong>：</p>
 <ul>
 <li><p>可以使用<code>express.static</code>中间件来处理静态文件，如HTML、CSS、JavaScript和图像文件。例如，要将<code>public</code>目录作为静态文件的根目录，可以使用以下代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&#x27;public&#x27;</span>));</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="2">
-<li><strong>构建API</strong>：</li>
-</ol>
+</li>
+<li><p><strong>构建API</strong>：</p>
 <ul>
 <li>Express非常适合构建RESTful API。可以使用不同的HTTP请求方法来处理不同的操作，如GET用于获取数据，POST用于创建数据，PUT用于更新数据，DELETE用于删除数据。</li>
 </ul>
-<ol start="3">
-<li><strong>使用模板引擎</strong>：</li>
-</ol>
+</li>
+<li><p><strong>使用模板引擎</strong>：</p>
 <ul>
-<li>Express支持多种模板引擎，如Pug、EJS等。可以使用模板引擎来生成动态HTML内容。</li>
+<li>Express支持多种模板引擎，如Pug、EJS等。可以使用模板引擎来生成动态HTML内容。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">set</span>(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;ejs&#x27;</span>);</span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; <span class="attr">title</span>: <span class="string">&#x27;Hello&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="4">
-<li><strong>错误处理</strong>：</li>
-</ol>
+</li>
+<li><p><strong>错误处理</strong>：</p>
 <ul>
 <li><p>Express允许你定义全局错误处理中间件，以捕获和处理应用程序中发生的错误。例如，可以使用以下代码来捕获并处理所有错误：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">err, req, res, next</span>) =&gt;</span> &#123;    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(err.<span class="property">stack</span>);    </span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">500</span>).<span class="title function_">send</span>(<span class="string">&#x27;Something broke!&#x27;</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">err, req, res, next</span>) =&gt;</span> &#123; </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(err.<span class="property">stack</span>);  </span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">500</span>).<span class="title function_">send</span>(<span class="string">&#x27;Something broke!&#x27;</span>); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
+</li>
+</ol>
 <h3 id="四、参考资源"><a href="#四、参考资源" class="headerlink" title="四、参考资源"></a>四、参考资源</h3><ol>
 <li><strong>官方网站</strong>：Express.js的官方网站（<a target="_blank" rel="noopener" href="https://expressjs.com/">https://expressjs.com</a>）提供了详细的文档和示例代码，是学习Express.js的最佳资源。</li>
 <li><strong>在线教程</strong>：可以在各大在线教育平台上找到Express.js的在线教程和视频课程，这些教程通常提供了丰富的实例和案例，有助于更好地理解Express.js的使用。</li>
