@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><meta name="msvalidate.01" content="1A4E0B06FA2C723C7A6AF5252581B84E"><title>Express入门 | 烟雨数流年的博客</title><meta name="author" content="烟雨数流年"><meta name="copyright" content="烟雨数流年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Express.js 是由 TJ Holowaychuk 开发的，现在由 Node.js 基金会和众多开源贡献者维护。它是一个保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。  一、安装与基本使用 安装Node.js：   首先，需要在计"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yanyusln.github.io/2024/10/22/Express%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Express入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-22 10:10:06'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/gallery/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/gallery/covers/ts.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="烟雨数流年的博客"><span class="site-name">烟雨数流年的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Express入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-22T02:08:00.000Z" title="发表于 2024-10-22 10:08:00">2024-10-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T02:10:06.045Z" title="更新于 2024-10-22 10:10:06">2024-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/nodejs/">nodejs</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Express入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>Express.js 是由 TJ Holowaychuk 开发的，现在由 Node.js 基金会和众多开源贡献者维护。它是一个保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。</p>
+</blockquote>
+<h3 id="一、安装与基本使用"><a href="#一、安装与基本使用" class="headerlink" title="一、安装与基本使用"></a>一、安装与基本使用</h3><ol>
+<li><strong>安装Node.js</strong>：</li>
+</ol>
+<ul>
+<li>首先，需要在计算机上安装Node.js。Node.js是一个基于Chrome V8引擎的JavaScript运行环境，它允许JavaScript代码在服务器端运行。</li>
+</ul>
+<ol start="2">
+<li><strong>安装Express</strong>：</li>
+</ol>
+<ul>
+<li><p>使用npm（Node.js的包管理器）来安装Express。在项目目录下，打开命令行工具，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这将下载并安装Express及其依赖项。</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>创建简单的Express服务器</strong>：</li>
+</ol>
+<ul>
+<li><p>创建一个JavaScript文件（例如<code>app.js</code>），并在其中编写以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);  <span class="keyword">const</span> app = <span class="title function_">express</span>();  <span class="keyword">const</span> port = <span class="number">3000</span>;   app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;    res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>);  &#125;);   app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>`</span>);  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这段代码创建了一个Express应用程序，定义了一个简单的路由，当访问根路径时返回“Hello World!”。</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>启动服务器</strong>：</li>
+</ol>
+<ul>
+<li><p>在命令行中，进入项目目录，并执行以下命令来启动应用程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将看到控制台输出的服务器运行消息，并且可以在浏览器中访问<code>http://localhost:3000</code>，看到“Hello World!”的消息显示在页面上。</p>
+</li>
+</ul>
+<h3 id="二、核心概念"><a href="#二、核心概念" class="headerlink" title="二、核心概念"></a>二、核心概念</h3><ol>
+<li><strong>路由</strong>：</li>
+</ol>
+<ul>
+<li>路由是指定义应用程序端点的路径以及处理这些路径上请求的方式。在Express中，可以使用<code>app.METHOD(PATH, HANDLER)</code>语法来定义路由，其中<code>METHOD</code>是HTTP请求方法（如GET、POST等），<code>PATH</code>是请求的路径，<code>HANDLER</code>是处理请求的函数。</li>
+</ul>
+<ol start="2">
+<li><strong>中间件</strong>：</li>
+</ol>
+<ul>
+<li>中间件是一种函数，可以访问请求对象（req）、响应对象（res）和应用程序请求-响应周期中的下一个中间件函数。每个中间件函数都有权访问请求对象（req）、响应对象（res），以及管道中下一个中间件函数的引用（next）。中间件常用于执行以下任务：<ul>
+<li>执行任何代码。</li>
+<li>修改请求和响应对象。</li>
+<li>结束请求-响应循环。</li>
+<li>调用堆栈中的下一个中间件函数。</li>
+</ul>
+</li>
+<li>如果当前中间件没有结束请求-响应循环，则必须调用<code>next()</code>函数以将控制权传递给下一个中间件函数。否则，请求将保持挂起状态。</li>
+</ul>
+<ol start="3">
+<li><strong>请求和响应对象</strong>：</li>
+</ol>
+<ul>
+<li><code>req</code>（请求对象）包含了与HTTP请求相关的所有信息，如请求头、请求参数等。</li>
+<li><code>res</code>（响应对象）用于发送HTTP响应到客户端，如设置状态码、发送数据等。</li>
+</ul>
+<h3 id="三、进一步学习"><a href="#三、进一步学习" class="headerlink" title="三、进一步学习"></a>三、进一步学习</h3><ol>
+<li><strong>处理静态文件</strong>：</li>
+</ol>
+<ul>
+<li><p>可以使用<code>express.static</code>中间件来处理静态文件，如HTML、CSS、JavaScript和图像文件。例如，要将<code>public</code>目录作为静态文件的根目录，可以使用以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&#x27;public&#x27;</span>));</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li><strong>构建API</strong>：</li>
+</ol>
+<ul>
+<li>Express非常适合构建RESTful API。可以使用不同的HTTP请求方法来处理不同的操作，如GET用于获取数据，POST用于创建数据，PUT用于更新数据，DELETE用于删除数据。</li>
+</ul>
+<ol start="3">
+<li><strong>使用模板引擎</strong>：</li>
+</ol>
+<ul>
+<li>Express支持多种模板引擎，如Pug、EJS等。可以使用模板引擎来生成动态HTML内容。</li>
+</ul>
+<ol start="4">
+<li><strong>错误处理</strong>：</li>
+</ol>
+<ul>
+<li><p>Express允许你定义全局错误处理中间件，以捕获和处理应用程序中发生的错误。例如，可以使用以下代码来捕获并处理所有错误：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">err, req, res, next</span>) =&gt;</span> &#123;    <span class="variable language_">console</span>.<span class="title function_">error</span>(err.<span class="property">stack</span>);    res.<span class="title function_">status</span>(<span class="number">500</span>).<span class="title function_">send</span>(<span class="string">&#x27;Something broke!&#x27;</span>);  &#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="四、参考资源"><a href="#四、参考资源" class="headerlink" title="四、参考资源"></a>四、参考资源</h3><ol>
+<li><strong>官方网站</strong>：Express.js的官方网站（<a target="_blank" rel="noopener" href="https://expressjs.com/">https://expressjs.com</a>）提供了详细的文档和示例代码，是学习Express.js的最佳资源。</li>
+<li><strong>在线教程</strong>：可以在各大在线教育平台上找到Express.js的在线教程和视频课程，这些教程通常提供了丰富的实例和案例，有助于更好地理解Express.js的使用。</li>
+<li><strong>社区支持</strong>：Express.js拥有一个活跃的社区，可以在Stack Overflow、GitHub等平台上找到关于Express.js的问题和解决方案。</li>
+</ol>
+<p>通过以上入门详解，你可以开始使用Express.js来构建自己的Web应用程序和API。随着对Express.js的深入理解，你将能够掌握更多高级功能和最佳实践，以构建更复杂和高效的Web应用程序。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://yanyusln.github.io">烟雨数流年</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://yanyusln.github.io/2024/10/22/Express%E5%85%A5%E9%97%A8/">https://yanyusln.github.io/2024/10/22/Express入门/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议 ，转载请注明出处！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/express/">express</a></div><div class="post_share"><div class="social-share" data-image="/gallery/covers/ts.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><img class="cover" src="/gallery/covers/vuejs.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue3项目实战之脚手架入门</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/gallery/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">烟雨数流年</div><div class="author-info__description">一个前端搬砖工的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yanyusln"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">一、安装与基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">二、核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.</span> <span class="toc-text">三、进一步学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="toc-number">4.</span> <span class="toc-text">四、参考资源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/10/22/Express%E5%85%A5%E9%97%A8/" title="Express入门"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Express入门"/></a><div class="content"><a class="title" href="/2024/10/22/Express%E5%85%A5%E9%97%A8/" title="Express入门">Express入门</a><time datetime="2024-10-22T02:08:00.000Z" title="发表于 2024-10-22 10:08:00">2024-10-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门"><img src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue3项目实战之脚手架入门"/></a><div class="content"><a class="title" href="/2024/09/19/vue3%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B9%8B%E8%84%9A%E6%89%8B%E6%9E%B6%E5%85%A5%E9%97%A8/" title="vue3项目实战之脚手架入门">vue3项目实战之脚手架入门</a><time datetime="2024-09-19T07:20:44.000Z" title="发表于 2024-09-19 15:20:44">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析"><img src="/gallery/covers/vuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3的概述和入门浅析"/></a><div class="content"><a class="title" href="/2024/09/19/Vue3%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="Vue3的概述和入门浅析">Vue3的概述和入门浅析</a><time datetime="2024-09-19T07:19:53.000Z" title="发表于 2024-09-19 15:19:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript数据类型解析"/></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A7%A3%E6%9E%90/" title="TypeScript数据类型解析">TypeScript数据类型解析</a><time datetime="2024-09-19T07:18:53.000Z" title="发表于 2024-09-19 15:18:53">2024-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析"><img src="/gallery/covers/ts.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript概述-TypeScript入门浅析"/></a><div class="content"><a class="title" href="/2024/09/19/TypeScript%E6%A6%82%E8%BF%B0-TypeScript%E5%85%A5%E9%97%A8%E6%B5%85%E6%9E%90/" title="TypeScript概述-TypeScript入门浅析">TypeScript概述-TypeScript入门浅析</a><time datetime="2024-09-19T07:18:01.000Z" title="发表于 2024-09-19 15:18:01">2024-09-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 烟雨数流年</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
